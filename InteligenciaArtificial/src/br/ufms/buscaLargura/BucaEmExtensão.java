@@ -1,4 +1,4 @@
-package br.ufms.busca;
+package br.ufms.buscaLargura;
 
 public class BucaEmExtensão {
 
