@@ -125,16 +125,18 @@ public class AEstrela {
 	 * 
 	 */
 	public static void Aestrela(int atual, int anterior) {
-		System.out.println("Linha " + atual + "\tPai " + anterior + " Cidade "
-				+ cidades[atual]);
+		System.out.println("Id atual " + atual + "\tId pai " + anterior + " Cidade "
+				+ cidades[atual].toUpperCase());
 		visitados[atual] = 1;
 		if (!cidades[atual].equalsIgnoreCase(CIDADE)) {
 			int menor = Integer.MAX_VALUE;
 			int n = 0;
 
-			// encontra o menos dos destinos possiveis apartir do no atual
-			for (int i = 0; i < tam; i++) {
-				if (m[atual][i] != 0) {
+			/**
+			 *  encontra o menos dos destinos possiveis apartir do no atual
+	 		 */
+	 		for (int i = 0; i < tam; i++) {
+	 			if (m[atual][i] != 0) {
 					gs[i] = gs[atual] + m[atual][i];
 					fs[i] = gs[i] + hs[i];
 					// System.out.println("Cidade " + cidades[i] + " f (" +
@@ -168,8 +170,8 @@ public class AEstrela {
 			// System.out.println("\tCidade Escolhida depois de vetificar o pai "
 			// + cidades[n] + " f (" + fs[n] + ") = g (" + gs[n] + ") h ("
 			// + hs[n] + ")");
-			System.out.println("Indo para " + cidades[n] + "\t F = " + fs[n]
-					+ "\tG = " + gs[n] + "\tH = " + hs[n]);
+			System.out.println("Indo para " + cidades[n].toUpperCase() + "\t F = " + fs[n]
+					+ "  G = " + gs[n] + "  H = " + hs[n]);
 			Aestrela(n, atual);
 		}
 	}
